@@ -1,1 +1,1 @@
-# togo-orthology
+# TogoOrthology
