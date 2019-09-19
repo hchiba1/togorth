@@ -1,1 +1,47 @@
-TOGOrth
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>TOGO Orth</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <link href="css/togorth.css" rel="stylesheet" />
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/togorth.js"></script>
+      <script>
+        $().ready(
+            function() {
+                var tabs = [
+                    { title: 'Databases', page: 'databases' },
+                    { title: 'SPARQL',    page: 'sparql' }
+                ];
+                togorth.createTabs( tabs );
+            }
+        );
+      </script>
+    <link 
+  </head>
+  <body>
+    <header>
+      <div id="header" class="container">
+        <h1 id="title">TOGO Orth</h1>
+      </div>
+      <nav id="top_menu">
+        <div class="tab_rest"></div>
+        <div id="tabs"></div>
+        <div class="tab_rest"></div>
+      </nav>
+    </header>
+    <article>
+      <div class="container">
+        <div id="tabpane">
+          <div id="contents"></div>
+        </div>
+      </div>
+    </article>
+    <footer>
+      <div class="container">
+        Copyright (C) 2019 Database Center for Life Science (DBCLS)
+      </div>
+    </footer>
+
+  </body>
+</html>
