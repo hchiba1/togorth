@@ -146,3 +146,82 @@ togorth.createSparqlResultTable = function( headers, result ) {
         }
     );
 }
+
+// create db table
+togorth.createDbTable = function( id ) {
+    $.ajax(
+        {
+            url: 'https://spreadsheets.google.com/feeds/list/1QNBD67P-CUbmz_NNOkikNYsuV2bL9zzauToFDZeLib4/od6/public/values',
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                alt: 'json'
+            }
+        }
+    ).then(
+        function( result ) {
+            var tag = '<tr><th>Name</th><th>Method</th><th>Hierarchical / Flat</th><th>Target</th><th>#organisms</th><th>Sequence Source</th>'
+                    + '<th>Publication</th><th>Last Update</th><th>URL</th></tr>'
+            $( '#' + id ).html( tag );
+            result.feed.entry.forEach(
+                function( entry ) {
+                    var object = togorth.getDbObject( entry.content.$t );
+                    var lineTag = togorth.createDbLineTag( object );
+                    $( '#' + id ).append( lineTag );
+                }
+            );
+        }
+    );
+}
+
+// get DB object
+togorth.getDbObject = function ( string ) {
+    var object = {};
+    var array = string.split( ',' );
+    var prevKey = null;
+    
+    array.forEach(
+        function( element ) {
+            var index = element.indexOf( ':' );
+            if( index >= 0 ) {
+                var key = element.substr( 0, index ).trim();
+                var value = element.substr( index + 1 ).trim();
+                object[ key ] = value;
+                prevKey = key;
+            }
+            else {
+                if( prevKey != null ) {
+                    object[ prevKey ] = object[ prevKey ] + ', ' + element.trim();
+                }
+            }
+        }
+    );
+
+    return object;
+}
+
+// create DB line tag
+togorth.createDbLineTag = function( object ) {
+    var tag = '';
+
+    [ 
+        'name', 'method', 'hierarchicalflatpair-wiseandothercharacteristics', 'target', 'organisms', 
+        'sequencesource', 'publication', 'lastupdate', 'url'
+    ].forEach(
+        function( key ) {
+            if( key in object ) {
+                var value = object[ key ];
+                if( key === 'url' ) {
+                    value = '<a href="' + value + '" target="_blank">' + value + '</a>';
+                }
+                tag += '<td>' + value + '</td>'
+            }
+            else {
+                tag += '<td></td>';
+            }
+        }
+    )
+    
+    tag = '<tr>' + tag + '</tr>';
+    return tag;
+}
