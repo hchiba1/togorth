@@ -3,13 +3,18 @@
   <head>
       <title>TOGO Orth</title>
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <link href="css/select2.css" rel="stylesheet" />
       <link href="css/togorth.css" rel="stylesheet" />
       <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/d3.js"></script>
+      <script src="js/select2.js"></script>
       <script src="js/togorth.js"></script>
+      <script src="js/ortholog-group.js"></script>
       <script>
         $().ready(
             function() {
                 var tabs = [
+                    { title: 'Search', page: 'search' },
                     { title: 'Databases', page: 'databases' },
                     { title: 'SPARQL',    page: 'sparql' }
                 ];
