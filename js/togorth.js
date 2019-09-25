@@ -5,7 +5,7 @@ var togorth = {};
 togorth.id = 1;
 
 // endpoint
-togorth.endpoint = 'http://mbgd.genome.ad.jp:8047/sparql';
+togorth.endpoint = 'https://sparql.orth.dbcls.jp/sparql';
 
 // issue ID
 togorth.issueId = function() {
@@ -202,12 +202,18 @@ togorth.getDbObject = function ( string ) {
 
 // create DB line tag
 togorth.createDbLineTag = function( object ) {
-    var tag = '';
-
-    [ 
+    var keys = [ 
         'name', 'method', 'hierarchicalflatpair-wiseandothercharacteristics', 'target', 'organisms', 
         'sequencesource', 'publication', 'lastupdate', 'url'
-    ].forEach(
+    ]
+    var tag = togorth.createLineTag( object, keys );
+    return tag;
+}
+
+// create line tag
+togorth.createLineTag = function( object, keys ) {
+    var tag = '';
+    keys.forEach(
         function( key ) {
             if( key in object ) {
                 var value = object[ key ];
@@ -220,8 +226,43 @@ togorth.createDbLineTag = function( object ) {
                 tag += '<td></td>';
             }
         }
-    )
-    
+    );
     tag = '<tr>' + tag + '</tr>';
     return tag;
 }
+
+// create db table
+togorth.createLinkTable = function( id ) {
+    var tag = '<tr><th>Name</th><th>URL</th></tr>';
+    $( '#' + id ).html( tag );
+    $.getJSON(
+        'json/links.json',
+        function( data ) {
+            data.forEach(
+                function( element ) {
+                    var tag = togorth.createLineTag( element, [ 'name', 'url' ] );
+                    $( '#' + id ).append( tag );
+                }
+            );
+        }
+    );
+}
+
+// create reference table
+togorth.createReferenceTable = function( id ) {
+    var tag = '<tr><th>Authors</th><th>Year</th><th>Title</th><th>Journal</th></tr>';
+    $( '#' + id ).html( tag );
+    $.getJSON(
+        'json/references.json',
+        function( data ) {
+            data.forEach(
+                function( element ) {
+                    var keys = [ 'authors', 'year', 'title', 'journal' ];
+                    var tag = togorth.createLineTag( element, keys );
+                    $( '#' + id ).append( tag );
+                }
+            );
+        }
+    );
+}
+
