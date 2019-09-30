@@ -56,11 +56,12 @@ togorth.addTabContent = function( page, id ) {
 
 // open tab
 togorth.openTab = function( id ) {
-    $( '.tab_button' ).css( 'background-color', 'darkgreen' );
-    $( '.tab_button' ).css( 'color', 'white' );
-    $( '.tab_content' ).css( 'display', 'none' );
-    $( '#tab_button-' + id ).css( 'background-color', 'white' );
-    $( '#tab_button-' + id ).css( 'color', 'darkgreen' );
+    $( '.tab_button' ).css( 'color', 'black' );
+    $( '.tab_button' ).css( 'border-bottom', 'none' );
+    $( '.tab_button:hover' ).css( 'border-bottom', '2px solid #005cab' );
+    $( '.tab_content' ).css( 'display', 'none' );    
+    $( '#tab_button-' + id ).css( 'color', '#005cab' );
+    $( '#tab_button-' + id ).css( 'border-bottom', '2px solid #005cab' );
     $( '#tab_content-' + id ).css( 'display', 'block' );
 }
 

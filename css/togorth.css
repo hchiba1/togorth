@@ -1,14 +1,17 @@
 header {
     padding: 10px 10px 0 10px;
-    background-color: darkgreen;
+    display: flex;
+    background-color: white;
     color: white;
+    max-width: 1250px;
+    margin: 0 auto;
+    height: 200px;
 }
 
 footer {
     padding: 10px;
-    background-color: darkgreen;
+    background-color: navy;
     color: white;
-
 }
 
 textarea {
@@ -29,22 +32,26 @@ div {
 }
 
 table {
-    border: 1px solid darkgreen;
+    border: 1px solid navy;
     border-collapse: collapse;
 }
 
 th {
-    background-color: lightgreen;
-    color: darkgreen;
+    background-color: lightblue;
+    color: navy;
     margin: 0;
     padding: 1px;
-    border: 1px solid darkgreen;
+    border: 1px solid navy;
 }
 
 td {
-    border: 1px solid darkgreen;
+    border: 1px solid navy;
     margin: 0;
     padding: 1px;
+}
+
+nav {
+    height: 100px;
 }
 
 #title {
@@ -58,12 +65,13 @@ td {
 
 #top_menu {
     display: flex;
+    vertical-align: center;
 }
 
 #tabs {
     padding: 0;
     display: flex;
-    width: 1000px;
+    vertical-align: center;
 }
 
 #top_menu_inner {
@@ -83,30 +91,24 @@ td {
     display: none;
 }
 
-.tab_button {
-    background-color: darkgreen;
-    color: white;
+.tab_button,
+.tab_button:active,
+.tab_button:hover  {
+    display: block;
+    width: 120px;
+    height: 50px;
+    font-size: 15px;
+    background-color: white;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: black;
+    cursor: pointer;
     outline: 0;
     border: none;
 }
 
-.tab_rest {
-    flex-grow: 1;
-    border-bottom: 1px solid darkgreen;
-}
-
-.tab_button,
-.tab_button:active,
 .tab_button:hover {
-    display: block;
-    width: 180px;
-    height: 50px;
-    font-size: 14px;
-    background-color: white;
-    font-family: serif;
-    font-weight: bold;
-    cursor: pointer;
-    outline: 0;
+    border-bottom: solid 2px #005cab;
 }
 
 .submit {
@@ -125,6 +127,8 @@ td {
     background-color: gray;
 }
 
-
-
+.logo {
+    flex-grow: 1;
+    height: 100px;
+}
 
