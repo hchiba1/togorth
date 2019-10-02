@@ -163,11 +163,10 @@ togorth.createDbTable = function( id ) {
     ).then(
         function( result ) {
             var tag = '<tr><th>No.</th><th>Name</th><th>Method</th><th>Hierarchical / Flat</th><th>Target</th><th>#organisms</th><th>Sequence Source</th>'
-                    + '<th>Publication</th><th>Last Update</th><th>URL</th></tr>'
+                    + '<th>Publication</th><th>Last Update</th></tr>'
             $( '#' + id ).html( tag );
             result.feed.entry.forEach(
                 function( entry ) {
-                    console.log( entry );
                     var obsolete = '';
                     if( 'gsx$obsolete' in entry ) {
                         obsolete = entry[ 'gsx$obsolete' ][ '$t' ];
@@ -178,8 +177,8 @@ togorth.createDbTable = function( id ) {
                         object.no = no;
                         var lineTag = togorth.createDbLineTag( object );
                         $( '#' + id ).append( lineTag );
+                        no++;                        
                     }
-                    no++;
                 }
             );
         }
@@ -216,7 +215,7 @@ togorth.getDbObject = function ( string ) {
 togorth.createDbLineTag = function( object ) {
     var keys = [ 
         'no', 'name', 'method', 'hierarchicalflatpair-wiseandothercharacteristics', 'target', 'organisms', 
-        'sequecesource', 'publication', 'lastupdate', 'url'
+        'sequecesource', 'publication', 'lastupdate',
     ]
     var tag = togorth.createLineTag( object, keys );
     return tag;
@@ -229,8 +228,9 @@ togorth.createLineTag = function( object, keys ) {
         function( key ) {
             if( key in object ) {
                 var value = object[ key ];
-                if( key === 'url' ) {
-                    value = '<a href="' + value + '" target="_blank">' + value + '</a>';
+                if( key === 'name' ) {
+                    var url = object.url;
+                    value = '<a href="' + url + '" target="_blank">' + value + '</a>';
                 }
                 tag += '<td>' + value + '</td>'
             }
