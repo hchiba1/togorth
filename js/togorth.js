@@ -215,7 +215,7 @@ togorth.getDbObject = function ( string ) {
 togorth.createDbLineTag = function( object ) {
     var keys = [ 
         'no', 'name', 'method', 'hierarchicalflatpair-wiseandothercharacteristics', 'target', 'organisms', 
-        'sequecesource', 'publication', 'lastupdate',
+        'sequencesource', 'publication', 'lastupdate',
     ]
     var tag = togorth.createLineTag( object, keys );
     return tag;
