@@ -1,0 +1,10 @@
+[
+    {
+        "name": "MBGD",
+        "url":  "http://mbgd.genome.ad.jp/sparql/"
+    },
+    {
+        "name": "KEGG OC RDF",
+        "url": "https://www.genome.jp/oc/"
+    }
+]
