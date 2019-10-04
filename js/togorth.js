@@ -163,7 +163,7 @@ togorth.createDbTable = function( id ) {
     ).then(
         function( result ) {
             var tag = '<tr><th>No.</th><th>Name</th><th>Method</th><th>Hierarchical / Flat</th><th>Target</th><th>#organisms</th><th>Sequence Source</th>'
-                    + '<th>Publication</th><th>Last Update</th></tr>'
+                    + '<th>First Publication</th><th>Last Update</th></tr>'
             $( '#' + id ).html( tag );
             result.feed.entry.forEach(
                 function( entry ) {
