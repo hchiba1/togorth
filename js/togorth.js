@@ -243,7 +243,24 @@ togorth.createLineTag = function( object, keys ) {
     return tag;
 }
 
-// create db table
+// create endpoint table
+togorth.createEndpointTable = function( id ) {
+    var tag = '<tr><th>Name</th><th>URL</th></tr>';
+    $( '#' + id ).html( tag );
+    $.getJSON(
+        'json/endpoints.json',
+        function( data ) {
+            data.forEach(
+                function( element ) {
+                    var tag = togorth.createLineTag( element, [ 'name', 'url' ] );
+                    $( '#' + id ).append( tag );
+                }
+            );
+        }
+    );
+}
+
+// create link table
 togorth.createLinkTable = function( id ) {
     var tag = '<tr><th>Name</th><th>URL</th></tr>';
     $( '#' + id ).html( tag );
