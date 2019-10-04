@@ -1,0 +1,14 @@
+[
+    {
+        "name": "COG",
+        "url": "Tatusov, R. L., Koonin, E. V., & Lipman, D. J. (1997). A genomic perspective on protein families. Science, 278(5338), 631-637."
+    },
+    {
+        "name": "COG",
+        "url": "Tatusov, R. L., Galperin, M. Y., Natale, D. A., & Koonin, E. V. (2000). The COG database: a tool for genome-scale analysis of protein functions and evolution. Nucleic acids research, 28(1), 33-36."
+    },
+    {
+        "name": "COG",
+        "url":  "Tatusov, R. L., Fedorova, N. D., Jackson, J. D., Jacobs, A. R., Kiryutin, B., Koonin, E. V., ... & Rao, B. S. (2003). The COG database: an updated version includes eukaryotes. BMC bioinformatics, 4(1), 41."
+    }
+]
