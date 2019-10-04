@@ -1,0 +1,26 @@
+[
+    {
+        "name": "MBGD",
+        "url":  "http://mbgd.genome.ad.jp/sparql/"
+    },
+    {
+        "name": "KEGG OC",
+        "url": "https://www.genome.jp/oc/"
+    },
+    {
+        "name": "PGDBj",
+        "url": "https://integbio.jp/rdf/?view=detail&id=pgdbj"
+    },
+    {
+        "name": "OMA",
+        "url": "https://sparql.omabrowser.org/lode/sparql"
+    },
+    {
+        "name": "OrthoDB",
+        "url": "https://sparql.orthodb.org/"
+    },
+    {
+        "name": "AgroLD",
+        "url": "http://agrold.southgreen.fr/agrold/sparqleditor.jsp"
+    }
+]
