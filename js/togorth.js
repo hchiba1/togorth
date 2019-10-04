@@ -277,6 +277,23 @@ togorth.createLinkTable = function( id ) {
     );
 }
 
+// create paper table
+togorth.createPaperTable = function( id ) {
+    var tag = '<tr><th>Name</th><th>URL</th></tr>';
+    $( '#' + id ).html( tag );
+    $.getJSON(
+        'json/papers.json',
+        function( data ) {
+            data.forEach(
+                function( element ) {
+                    var tag = togorth.createLineTag( element, [ 'name', 'url' ] );
+                    $( '#' + id ).append( tag );
+                }
+            );
+        }
+    );
+}
+
 // create reference table
 togorth.createReferenceTable = function( id ) {
     var tag = '<tr><th>Authors</th><th>Year</th><th>Title</th><th>Journal</th></tr>';
