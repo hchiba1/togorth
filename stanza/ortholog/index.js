@@ -13,13 +13,13 @@ Stanza(
         params.genes = genesStr;
 
         var dataQuery = {
-            endpoint: 'http://mbgd.genome.ad.jp:8047/sparql',
+            endpoint: 'http://sparql.orth.dbcls.jp/sparql',
             template: 'data.rq',
             parameters: params
         };
 
         var countQuery = {
-                endpoint: 'http://mbgd.genome.ad.jp:8047/sparql',
+                endpoint: 'http://sparql.orth.dbcls.jp/sparql',
                 template: 'count.rq',
         };
 
