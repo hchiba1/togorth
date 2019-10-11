@@ -1,0 +1,19 @@
+PREFIX orth: <http://purl.jp/bio/11/orth#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select distinct ?gene_label ?common_id ?scientific_name ?common_name ?comment ?time where {
+    values ?gene_label { {{genes}} } .
+    ?gene rdfs:label ?gene_label .
+    ?orthogroup a orth:OrthologGroup ;
+           dct:identifier ?orthogroup_id ;
+           orth:member ?gene ;
+           orth:organism ?organism .
+    ?organism rdfs:label ?scientific_name ;
+           dct:identifier ?common_id ;
+           dct:description ?common_name ;
+           rdfs:comment ?comment ;
+           hop:branchTimeMya ?time .
+}
+order by ?common_id

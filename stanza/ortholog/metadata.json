@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "stanza": "http://togostanza.org/resource/stanza#"
+  },
+  "@id": "ortholog",
+  "stanza:label": "Ortholog Viewer",
+  "stanza:definition": "Ortholog.",
+  "stanza:parameter": [
+    {
+      "stanza:key": "genes",
+      "stanza:example": "TTC21B",
+      "stanza:description": "Gene labels (space separated values)",
+      "stanza:required": true
+    }
+  ],
+  "stanza:usage": "<togostanza-ortholog genes=\"TTC21B\"></togostanza-ortholog>",
+  "stanza:type": "Stanza",
+  "stanza:context": "",
+  "stanza:display": "",
+  "stanza:provider": "provider of this stanza",
+  "stanza:license": "",
+  "stanza:author": "Satoshi Tanaka",
+  "stanza:address": "satstnka@trans-it.jp",
+  "stanza:contributor": [
+  ],
+  "stanza:created": "2018-01-18",
+  "stanza:updated": "2018-01-18"
+}
