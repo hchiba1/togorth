@@ -1,0 +1,9 @@
+PREFIX orth: <http://purl.jp/bio/11/orth#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT distinct ?label
+FROM <http://purl.org/net/orthordf/hOP>
+WHERE {
+    ?gene_id a orth:Gene ;
+             rdfs:label ?label .
+}

@@ -1,0 +1,14 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#>
+PREFIX group: <http://purl.org/net/orthordf/hOP/group/>
+
+SELECT ?group ?group_id ?score
+WHERE {
+    VALUES (?query_group) { (group:1) }
+    ?pair hop:group ?query_group ;
+          hop:group ?group ;
+	  hop:score ?score .
+    ?group dct:identifier ?group_id .
+    FILTER (?query_group != ?group)
+}
+ORDER BY DESC(?score) DESC(?group_id)
