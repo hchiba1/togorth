@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Ortholog Viewer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="http://stanza.orth.dbcls.jp/stanza/assets/components/webcomponentsjs/webcomponents.min.js"></script>
+    <link href="http://stanza.orth.dbcls.jp/stanza/ortholog/" rel="import">
+    <script>
+        // get parameters
+        function getParameters() {
+            var parameters = {};
+            var pairs = location.search.substring( 1 ).split( '&' );
+            pairs.forEach(
+                function( pair ) {
+                    var tokens = pair.split( '=' );
+                    if( tokens.length >= 2 ) {
+                        var name = decodeURI( tokens[ 0 ] );
+                        var value = decodeURI( tokens[ 1 ] );
+                        parameters[ name ] = value;
+                    }
+                }
+            );
+            return parameters;
+        }
+
+        // create page
+        function createPage() {
+            var parameters = getParameters();
+            var stanza = parameters[ 'stanza' ];
+            var tag = 'togostanza-' + stanza;
+            var element = document.createElement( tag );
+            for( key in parameters ) {
+                if( key !== 'stanza' ) {
+                    element.setAttribute( key, parameters[ key ] );
+                }
+            }
+
+            document.getElementById( 'stanza' ).appendChild( element );
+        }
+    </script>
+  </head>
+  <body>
+      <div id="stanza"></div>
+  </body>
+  <script>
+      createPage();
+  </script>
+</html>

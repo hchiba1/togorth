@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>hOrth: human-centric orthology database</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/select2.min.css" rel="stylesheet">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/ortholog-viewer.js"></script>
+
+    <script>
+      $(document).ready( ortholog.createPage );
+    </script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+          <h1>hOrth</h1>
+	  human-centric orthology database
+      </div>
+    </div>
+    <div class="container">
+      <div class="form-group">
+        <label>Genes:</label>
+        <select id="select-gene" class="form-control" multiple="multiple">
+        </select>
+      </div>
+      <div>
+        <button id="button-update" class="btn btn-primary">Search</button>
+        <!-- <input id="check-openwindow" type="checkbox" name="openwindow"><label for="openwindow">Open new window</</label> -->
+      </div>
+      <div id="chart" style="margin: 10px 0px;"></div>
+    </div>
+  </body>
+</html>
