@@ -115,7 +115,7 @@ ortholog.showSearchResult = function( groupId ) {
 
     $.ajax(
        {
-           url: 'http://mbgd.genome.ad.jp:8047/sparql',
+           url: 'http://sparq.orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
@@ -146,7 +146,7 @@ ortholog.draw = function( groupId, area ) {
     var width = borderWidth * ortholog.maxId;
     $.ajax(
        {
-           url: 'http://mbgd.genome.ad.jp:8047/sparql',
+           url: 'http://sparq.orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
@@ -191,7 +191,7 @@ ortholog.createGenesSelect = function( term ) {
         {
             ajax: {
                 type: 'POST',
-                url: 'http://mbgd.genome.ad.jp:8047/sparql',
+                url: 'http://sparql.orth.dbcls.jp/sparql',
                 data: function( params ) {
                     var term = params.term;
                     var query = ortholog.createGenesQuery( term );
@@ -229,7 +229,7 @@ ortholog.createGroupPage = function() {
 
     $.ajax(
        {
-           url: 'http://mbgd.genome.ad.jp:8047/sparql',
+           url: 'http://sparql.orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
@@ -250,7 +250,7 @@ ortholog.onChangeGene = function() {
     var symbol = $( '#gene-selection' ).val();
     $.ajax(
        {
-           url: 'http://mbgd.genome.ad.jp:8047/sparql',
+           url: 'http://sparql.orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
