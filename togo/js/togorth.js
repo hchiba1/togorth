@@ -279,19 +279,45 @@ togorth.createLinkTable = function( id ) {
 
 // create paper table
 togorth.createPaperTable = function( id ) {
-    var tag = '<tr><th>Name</th><th>URL</th></tr>';
-    $( '#' + id ).html( tag );
-    $.getJSON(
-        'json/papers.json',
-        function( data ) {
-            data.forEach(
-                function( element ) {
-                    var tag = togorth.createLineTag( element, [ 'name', 'url' ] );
-                    $( '#' + id ).append( tag );
+    var no = 1;
+    $.ajax(
+        {
+            url: 'https://spreadsheets.google.com/feeds/list/1E1z5rRoRKuS9uyZk1D0mOzYBBT6W8K_uZwPbuuEPP58/od6/public/values',
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                alt: 'json'
+            }
+        }
+    ).then(
+        function( result ) {
+            var tag = '<tr><th>Tag</th><th>Year</th><th>Paper</th></tr>'
+            $( '#' + id ).html( tag );
+            result.feed.entry.forEach(
+                function( entry ) {
+                    console.log( entry );
+                    var tag = entry[ 'gsx$tag' ][ '$t' ];
+                    var paper = entry[ 'gsx$paper' ][ '$t' ];
+                    var year = entry[ 'gsx$year' ][ '$t' ];
+                    var url = entry[ 'gsx$url' ][ '$t' ];
+                    var lineTag = togorth.createPaperLineTag( tag, paper, year, url );
+                    $( '#' + id ).append( lineTag );
                 }
             );
         }
     );
+}
+
+// create paper line tag
+togorth.createPaperLineTag = function( tag, paper, year, url ) {
+    var line = '<tr><td>' + tag + '</td><td>' + year + '</td>';
+    var paperTag = paper;
+    if( url !== '' ) {
+        paperTag = '<a href="' + url + '" target="_blank">' + paperTag + '</a>';
+    }
+    paperTag = '<td>' + paperTag + '</td>';
+    line = line + paperTag + '</tr>';
+    return line;
 }
 
 // create reference table
