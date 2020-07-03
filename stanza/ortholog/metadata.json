@@ -8,7 +8,7 @@
   "stanza:parameter": [
     {
       "stanza:key": "genes",
-      "stanza:example": "TTC21B",
+      "stanza:example": "NAT2 TTC21B MED6 ADA AKT3",
       "stanza:description": "Gene labels (space separated values)",
       "stanza:required": true
     }
