@@ -1,0 +1,10 @@
+#!/usr/bin/env spang2
+# @param taxid=9606
+PREFIX taxid: <http://identifiers.org/taxonomy/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?label
+WHERE {
+  taxid:{{taxid}} rdfs:subClassOf* ?taxon .
+  ?taxon rdfs:label ?label .
+}
