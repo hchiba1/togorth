@@ -3,9 +3,10 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-select max( ?common_id ) as ?max_id where {
-    ?orthogroup a orth:OrthologGroup ;
-           orth:organism ?organism .
-    ?organism rdfs:label ?scientific_name ;
-           dct:identifier ?common_id .
+SELECT (max(?id) as ?max_id)
+WHERE {
+  ?group a orth:OrthologGroup ;
+      orth:organism ?organism .
+  ?organism rdfs:label ?label ;
+      dct:identifier ?id .
 }
