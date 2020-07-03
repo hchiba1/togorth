@@ -24,7 +24,7 @@ Stanza((stanza, params) => {
     const rows = dataResult.results.bindings;
     const count = countResult.results.bindings[0].max_id.value;
     stanza.render({
-      template: 'stanza.html'
+      template: 'view.html'
     });
     ortholog.render(stanza.select('#chart'), rows, genes, count);
   });
