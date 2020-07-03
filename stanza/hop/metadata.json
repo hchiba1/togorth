@@ -2,7 +2,7 @@
   "@context": {
     "stanza": "http://togostanza.org/resource/stanza#"
   },
-  "@id": "ortholog",
+  "@id": "hop",
   "stanza:label": "Phylogenetic Profile",
   "stanza:definition": "Phylogenetic profile for orthologs of a human gene.",
   "stanza:parameter": [
@@ -13,7 +13,7 @@
       "stanza:required": true
     }
   ],
-  "stanza:usage": "<togostanza-ortholog genes=\"TTC21B\"></togostanza-ortholog>",
+  "stanza:usage": "<togostanza-hop genes=\"TTC21B\"></togostanza-hop>",
   "stanza:type": "Stanza",
   "stanza:context": "",
   "stanza:display": "",
