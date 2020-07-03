@@ -3,8 +3,8 @@
     "stanza": "http://togostanza.org/resource/stanza#"
   },
   "@id": "ortholog",
-  "stanza:label": "Ortholog Viewer",
-  "stanza:definition": "Ortholog.",
+  "stanza:label": "Phylogenetic Profile",
+  "stanza:definition": "Phylogenetic profile for orthologs of a human gene.",
   "stanza:parameter": [
     {
       "stanza:key": "genes",
@@ -17,10 +17,10 @@
   "stanza:type": "Stanza",
   "stanza:context": "",
   "stanza:display": "",
-  "stanza:provider": "provider of this stanza",
+  "stanza:provider": "DBCLS",
   "stanza:license": "",
-  "stanza:author": "Satoshi Tanaka",
-  "stanza:address": "satstnka@trans-it.jp",
+  "stanza:author": "Hirokazu Chiba, Satoshi Tanaka",
+  "stanza:address": "chiba@dbcls.rois.ac.jp, satstnka@trans-it.jp",
   "stanza:contributor": [
   ],
   "stanza:created": "2018-01-18",
