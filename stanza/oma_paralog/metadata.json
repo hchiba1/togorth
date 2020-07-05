@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "stanza": "http://togostanza.org/resource/stanza#"
+  },
+  "@id": "oma_paralog",
+  "stanza:label": "Get paralogous genes",
+  "stanza:definition": "Get paralogous genes from OMA endpoint.",
+  "stanza:parameter": [
+    {
+      "stanza:key": "gene",
+      "stanza:example": "ENSG00000244734",
+      "stanza:description": "Ensembl Gene ID",
+      "stanza:required": true
+    }
+  ],
+  "stanza:usage": "<togostanza-oma_paralog></togostanza-oma_paralog>",
+  "stanza:type": "Stanza",
+  "stanza:context": "",
+  "stanza:display": "",
+  "stanza:provider": "DBCLS",
+  "stanza:license": "",
+  "stanza:author": "Hirokazu Chiba",
+  "stanza:address": "chiba@dbcls.rois.ac.jp",
+  "stanza:contributor": [
+  ],
+  "stanza:created": "2020-07-03",
+  "stanza:updated": "2020-07-03"
+}
