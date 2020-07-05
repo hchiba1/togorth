@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "stanza": "http://togostanza.org/resource/stanza#"
+  },
+  "@id": "oma_protein",
+  "stanza:label": "Get protein info",
+  "stanza:definition": "Get protein information from OMA.",
+  "stanza:parameter": [
+    {
+      "stanza:key": "protein",
+      "stanza:example": "INS",
+      "stanza:description": "protien ID",
+      "stanza:required": true
+    }
+  ],
+  "stanza:usage": "<togostanza-oma_protein></togostanza-oma_protein>",
+  "stanza:type": "Stanza",
+  "stanza:context": "",
+  "stanza:display": "",
+  "stanza:provider": "DBCLS",
+  "stanza:license": "",
+  "stanza:author": "Hirokazu Chiba",
+  "stanza:address": "chiba@dbcls.rois.ac.jp",
+  "stanza:contributor": [
+  ],
+  "stanza:created": "2020-07-03",
+  "stanza:updated": "2020-07-03"
+}

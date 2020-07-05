@@ -1,0 +1,21 @@
+#!/usr/bin/env spang2
+
+# @title Get proteins having specific label
+# @endpoint oma
+# @param protein=INS
+
+PREFIX oo: <http://purl.org/net/orth#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX up: <http://purl.uniprot.org/core/>
+PREFIX lscr: <http://purl.org/lscr#>
+
+SELECT ?UniProt_URI ?proteinOMA ?species
+WHERE {
+  ?proteinOMA a oo:Protein ;
+      rdfs:label 'INS' ;
+      lscr:xrefUniprot ?UniProt_URI ;
+      oo:organism/obo:RO_0002162/up:scientificName ?species .
+}
+ORDER BY ?species
+

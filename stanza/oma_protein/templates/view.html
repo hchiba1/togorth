@@ -1,0 +1,14 @@
+<table border="1">
+    <tr>
+        <th>UniProt</th>
+        <th>Protien ID</th>
+        <th>Protein Name</th>
+    </tr>
+    {{#each lines}}
+    <tr>
+        <td>{{UniProt_URI.value}}</td>
+        <td>{{proteinOMA.value}}</td>
+        <td>{{species.value}}</td>
+    </tr>
+    {{/each}}
+</table>
