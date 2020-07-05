@@ -13,7 +13,7 @@
       "stanza:required": true
     }
   ],
-  "stanza:usage": "<togostanza-hop genes=\"TTC21B\"></togostanza-hop>",
+  "stanza:usage": "<togostanza-hop_profile genes=\"TTC21B\"></togostanza-hop_profile>",
   "stanza:type": "Stanza",
   "stanza:context": "",
   "stanza:display": "",
