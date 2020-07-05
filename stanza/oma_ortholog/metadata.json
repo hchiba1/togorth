@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "stanza": "http://togostanza.org/resource/stanza#"
+  },
+  "@id": "oma_ortholog",
+  "stanza:label": "Get orthologous gene",
+  "stanza:definition": "Get organism information through SPARQL endpoint.",
+  "stanza:parameter": [
+    {
+      "stanza:key": "gene",
+      "stanza:example": "ENSLACG00000002497",
+      "stanza:description": "Ensembl Gene ID",
+      "stanza:required": true
+    }
+  ],
+  "stanza:usage": "<togostanza-oma_ortholog></togostanza-oma_ortholog>",
+  "stanza:type": "Stanza",
+  "stanza:context": "",
+  "stanza:display": "",
+  "stanza:provider": "DBCLS",
+  "stanza:license": "",
+  "stanza:author": "Hirokazu Chiba",
+  "stanza:address": "chiba@dbcls.rois.ac.jp",
+  "stanza:contributor": [
+  ],
+  "stanza:created": "2020-07-03",
+  "stanza:updated": "2020-07-03"
+}

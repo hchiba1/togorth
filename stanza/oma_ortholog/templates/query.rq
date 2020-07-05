@@ -1,0 +1,28 @@
+#!/usr/bin/env spang2
+
+# @title Get orthologs of a specific protein
+# @param oma
+# @param gene=ENSLACG00000002497
+
+PREFIX oo: <http://purl.org/net/orth#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX lscr: <http://purl.org/lscr#>
+PREFIX ens: <http://rdf.ebi.ac.uk/resource/ensembl/>
+
+SELECT ?ortholog_protein ?OMA_link ?organism_name ?protein_id ?protein_name
+WHERE {
+    ?cluster a oo:OrthologsCluster ;
+             oo:hasHomologousMember ?node1 ;
+             oo:hasHomologousMember ?node2 . 
+    ?node1 oo:hasHomologousMember* ?query_protein .
+    ?node2 oo:hasHomologousMember* ?ortholog_protein .
+    FILTER(?node1 != ?node2) 
+    ?query_protein sio:SIO_010079/lscr:xrefEnsemblGene ens:ENSLACG00000002497 .
+    ?ortholog_protein rdfs:seeAlso ?OMA_link .
+    ?ortholog_protein rdfs:label ?protein_id .
+    ?ortholog_protein rdfs:comment ?protein_name .
+    ?ortholog_protein oo:organism ?organism .
+    ?organism obo:RO_0002162 ?organism_tax .
+    ?organism_tax up:scientificName ?organism_name .
+}

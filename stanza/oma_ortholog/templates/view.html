@@ -1,0 +1,14 @@
+<table border="1">
+    <tr>
+        <th>Organism Name</th>
+        <!-- <th>Protein ID</th> -->
+        <th>Protein Name</th>
+    </tr>
+    {{#each lines}}
+    <tr>
+        <td>{{organism_name.value}}</td>
+        <!-- <td>{{protein_id.value}}</td> -->
+        <td>{{protein_name.value}}</td>
+    </tr>
+    {{/each}}
+</table>
