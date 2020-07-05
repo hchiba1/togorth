@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "stanza": "http://togostanza.org/resource/stanza#"
+  },
+  "@id": "organism",
+  "stanza:label": "Organism info",
+  "stanza:definition": "Get organism information through SPARQL endpoint.",
+  "stanza:parameter": [
+  ],
+  "stanza:usage": "<togostanza-oma_organism></togostanza-oma_organism>",
+  "stanza:type": "Stanza",
+  "stanza:context": "",
+  "stanza:display": "",
+  "stanza:provider": "DBCLS",
+  "stanza:license": "",
+  "stanza:author": "Hirokazu Chiba",
+  "stanza:address": "chiba@dbcls.rois.ac.jp",
+  "stanza:contributor": [
+  ],
+  "stanza:created": "2020-07-03",
+  "stanza:updated": "2020-07-03"
+}

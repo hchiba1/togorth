@@ -1,0 +1,11 @@
+#!/usr/bin/env spang2
+
+# @title List available species
+# @endpoint oma
+
+SELECT ?taxid ?name
+WHERE {
+  ?taxid a up:Taxon ;
+      up:scientificName ?name ;
+      up:rank up:Species .
+} 
