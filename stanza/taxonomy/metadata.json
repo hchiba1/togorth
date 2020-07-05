@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "stanza": "http://togostanza.org/resource/stanza#"
+  },
+  "@id": "taxonomy",
+  "stanza:label": "Taxonomy info",
+  "stanza:definition": "Get taxonomy information through SPARQL endpoint.",
+  "stanza:parameter": [
+    {
+      "stanza:key": "taxid",
+      "stanza:example": "9443",
+      "stanza:description": "NCBI Taxonomy ID",
+      "stanza:required": true
+    }
+  ],
+  "stanza:usage": "<togostanza-taxonomy></togostanza-taxonomy>",
+  "stanza:type": "Stanza",
+  "stanza:context": "",
+  "stanza:display": "",
+  "stanza:provider": "DBCLS",
+  "stanza:license": "",
+  "stanza:author": "Hirokazu Chiba",
+  "stanza:address": "chiba@dbcls.rois.ac.jp",
+  "stanza:contributor": [
+  ],
+  "stanza:created": "2020-07-03",
+  "stanza:updated": "2020-07-03"
+}

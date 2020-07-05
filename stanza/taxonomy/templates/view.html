@@ -1,0 +1,14 @@
+<table border="1">
+    <tr>
+        <th>Order Name</th>
+        <th>Family Name</th>
+        <th>Species Name</th>
+    </tr>
+    {{#each lines}}
+    <tr>
+        <td>{{order_name.value}}</td>
+        <td>{{family_name.value}}</td>
+        <td>{{species_name.value}}</td>
+    </tr>
+    {{/each}}
+</table>
