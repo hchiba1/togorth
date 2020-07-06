@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "stanza": "http://togostanza.org/resource/stanza#"
+  },
+  "@id": "keggoc_ortholog",
+  "stanza:label": "Get orthologs",
+  "stanza:definition": "Get KEGG OC orthologs from SPARQL endpoint.",
+  "stanza:parameter": [
+    {
+      "stanza:key": "uniprot",
+      "stanza:example": "Q96C23",
+      "stanza:description": "UniProt ID",
+      "stanza:required": true
+    }
+  ],
+  "stanza:usage": "<togostanza-keggoc_ortholog></togostanza-keggoc_ortholog>",
+  "stanza:type": "Stanza",
+  "stanza:context": "",
+  "stanza:display": "",
+  "stanza:provider": "DBCLS",
+  "stanza:license": "",
+  "stanza:author": "Hirokazu Chiba",
+  "stanza:address": "chiba@dbcls.rois.ac.jp",
+  "stanza:contributor": [
+  ],
+  "stanza:created": "2020-07-03",
+  "stanza:updated": "2020-07-03"
+}
