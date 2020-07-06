@@ -1,0 +1,12 @@
+<table border="1">
+    <tr>
+        <th>Taxonomy ID</th>
+        <th>UniProt ID</th>
+    </tr>
+    {{#each lines}}
+    <tr>
+        <td>{{idtax.value}}</td>
+        <td>{{upac.value}}</td>
+    </tr>
+    {{/each}}
+</table>
