@@ -1,4 +1,13 @@
-# TogoOrthology
-## Toward an integrated database of orthology resoruces
+# Orthology
+## Togo: Toward an integrated database of orthology resoruces
 
 There is a plethora of orthology resources published on the web. We are aiming at collecting and integrating these resources to make them seacheable integratively by leveraging a shared ontology.
+
+## hOP: human-centric orthologroup profile
+Web application for phylogenetic profiling
+
+## Stanza
+Web application components
+
+## SPARQL
+SPARQL queries
