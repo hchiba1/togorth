@@ -250,7 +250,7 @@ ortholog.createGroupPage = function() {
 ortholog.onChangeGene = function() {
     $( '#search_area' ).css( 'display', 'none' );
     var symbol = $( '#gene-selection' ).val();
-console.log(ortholog.createGeneGroupsQuery( symbol ));
+
     $.ajax(
        {
            url: 'https://orth.dbcls.jp/sparql',
