@@ -8,7 +8,8 @@ ortholog.createGroupsQuery = function( term ) {
     var query = 'PREFIX orth: <http://purl.jp/bio/11/orth#> '
               + 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> '
               + 'PREFIX dct: <http://purl.org/dc/terms/> '
-              + 'select distinct ?id ?label from <http://purl.org/net/orthordf/hOP> where { '
+              // + 'select distinct ?id ?label from <http://purl.org/net/orthordf/hOP> where { '
+              + 'select distinct ?id ?label from <https://orth.dbcls.jp/data/hop> where { '
               + '    ?group a orth:OrthologGroup ; '
               + '       rdfs:label ?label ; '
               + '       dct:identifier ?id . ';
@@ -25,7 +26,8 @@ ortholog.createGeneGroupsQuery = function( symbol ) {
     var query = 'PREFIX orth: <http://purl.jp/bio/11/orth#> '
               + 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> '
               + 'PREFIX dct: <http://purl.org/dc/terms/> '
-              + 'select distinct ?id from <http://purl.org/net/orthordf/hOP> where { '
+              // + 'select distinct ?id from <http://purl.org/net/orthordf/hOP> where { '
+              + 'select distinct ?id from <https://orth.dbcls.jp/data/hop> where { '
               + "    values ?gene_label { '" + symbol + "' } . "
               + '    ?group a orth:OrthologGroup ; '
               + '       rdfs:label ?label ; '
@@ -115,7 +117,7 @@ ortholog.showSearchResult = function( groupId ) {
 
     $.ajax(
        {
-           url: 'http://sparq.orth.dbcls.jp/sparql',
+           url: 'https://orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
@@ -146,7 +148,7 @@ ortholog.draw = function( groupId, area ) {
     var width = borderWidth * ortholog.maxId;
     $.ajax(
        {
-           url: 'http://sparq.orth.dbcls.jp/sparql',
+           url: 'https://orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
@@ -191,7 +193,7 @@ ortholog.createGenesSelect = function( term ) {
         {
             ajax: {
                 type: 'POST',
-                url: 'http://sparql.orth.dbcls.jp/sparql',
+                url: 'https://orth.dbcls.jp/sparql',
                 data: function( params ) {
                     var term = params.term;
                     var query = ortholog.createGenesQuery( term );
@@ -229,7 +231,7 @@ ortholog.createGroupPage = function() {
 
     $.ajax(
        {
-           url: 'http://sparql.orth.dbcls.jp/sparql',
+           url: 'https://orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
@@ -248,9 +250,10 @@ ortholog.createGroupPage = function() {
 ortholog.onChangeGene = function() {
     $( '#search_area' ).css( 'display', 'none' );
     var symbol = $( '#gene-selection' ).val();
+console.log(ortholog.createGeneGroupsQuery( symbol ));
     $.ajax(
        {
-           url: 'http://sparql.orth.dbcls.jp/sparql',
+           url: 'https://orth.dbcls.jp/sparql',
            type: 'GET',
            dataType: 'json',
            data: {
