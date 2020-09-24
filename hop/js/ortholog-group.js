@@ -39,20 +39,22 @@ ortholog.createGeneGroupsQuery = function( symbol ) {
 }
 
 // create genes property
-ortholog.createGenesQuery = function( term ) {
-    var query = 'PREFIX orth: <http://purl.jp/bio/11/orth#> '
-              + 'PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#> '
-              + 'SELECT ?description ?symbol '
-              + 'WHERE { '
-              + '    ?gene a orth:Gene ; '
-              + '    hop:symbol ?symbol ; '
-              + '    hop:description ?description . ';
-    if( term !== undefined && term !== null && term !== '' ) {
-        var keyword = term.toLowerCase();
-        query = query + "filter( contains( lcase( ?symbol ), '" + keyword + "' ) || contains( lcase( ?description ), '" + keyword  + "' ) ). ";
-    }
-    query = query + '} order by ?symbol';
-    return query;
+ortholog.createGenesQuery = function(term) {
+  let query = 'PREFIX orth: <http://purl.jp/bio/11/orth#> '
+    + 'PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#> '
+    + 'SELECT ?description ?symbol '
+    + 'WHERE { '
+    + '    ?gene a orth:Gene ; '
+    + '    hop:symbol ?symbol ; '
+    + '    hop:description ?description . ';
+  if( term !== undefined && term !== null && term !== '' ) {
+    const keyword = term.toLowerCase();
+    query = query + "FILTER( contains( lcase( ?symbol ), '" + keyword + "' ) || contains( lcase( ?description ), '" + keyword  + "' ) ). ";
+  }
+  query = query + '} ORDER BY ?symbol';
+
+  console.log(query);
+  return query;
 }    
 
 // create detail query
