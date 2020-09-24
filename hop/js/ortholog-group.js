@@ -42,7 +42,7 @@ ortholog.createGeneGroupsQuery = function( symbol ) {
 ortholog.createGenesQuery = function( term ) {
     var query = 'PREFIX orth: <http://purl.jp/bio/11/orth#> '
               + 'PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#> '
-              + ' SELECT ?description ?symbol '
+              + 'SELECT ?description ?symbol '
               + 'WHERE { '
               + '    ?gene a orth:Gene ; '
               + '    hop:symbol ?symbol ; '
