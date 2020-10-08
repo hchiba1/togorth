@@ -1,0 +1,23 @@
+<?php
+    $file_name = __DIR__ . '/data/human_genes.tsv';
+    $term = '';
+    if(isset($_REQUEST['term'])) {
+        $term = strtolower($_REQUEST['term']);
+    }
+    
+    $file = file($file_name);
+
+    $array = [];
+
+    foreach($file as $line) {
+        $tokens = explode("\t", $line);
+        $name = str_replace("\n", '', $tokens[1]);
+        if(strlen($name) > 0) {
+            if(strlen($term) == 0 || strpos(strtolower($name), $term) != FALSE) {
+                array_push($array, $name);
+            }
+        }
+    }
+    $json = json_encode($array);
+    echo $json;
+?>
