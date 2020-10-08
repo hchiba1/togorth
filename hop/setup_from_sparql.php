@@ -9,7 +9,7 @@
             . 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> '
             . 'PREFIX dc: <http://purl.org/dc/terms/> '
             . 'PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#> '
-            . 'select distinct ?id, ?label, ?name where { '
+            . 'select distinct ?id ?label ?name where { '
             . '    ?gene a orth:Gene ; '
             . '    rdfs:label ?label ; '
             . '    hop:description ?name ; '
