@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Human Ortholog Profile Search</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/select2.min.css" rel="stylesheet">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/d3.js"></script>
+    <script src="js/ortholog-group.js"></script>
+
+    <script>
+      $(document).ready(ortholog.createGroupPage2);
+    </script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Ortholog Profile Search</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="form-group">
+        <label>Human gene:</label>
+        <select id="gene-selection" style="width: 500px;"></select>
+      </div>
+      <table id="result"></table>
+      <div id="search_area" style="display: none; margin-top: 20px;">
+        <h3>Similarity Search Result</h3>
+        <table id="search_result"></table>
+      </div>
+    </div>
+  </body>
+</html>
