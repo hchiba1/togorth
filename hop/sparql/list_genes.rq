@@ -1,0 +1,15 @@
+#!/usr/bin/env spang2
+# @endpoint mbgd2015
+
+PREFIX orth: <http://purl.jp/bio/11/orth#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#>
+
+SELECT DISTINCT ?id ?label ?name
+WHERE {
+  ?gene a orth:Gene ;
+      rdfs:label ?label ;
+      hop:description ?name ;
+      dc:identifier ?id .
+}
