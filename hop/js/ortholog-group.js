@@ -258,32 +258,6 @@ ortholog.createGenesSelect2 = function( term ) {
 
 // create group page
 ortholog.createGroupPage = function() {
-    ortholog.createGenesSelect();
-    $('#gene-selection').change( 
-        function() {
-            ortholog.onChangeGene();
-        }
-    );
-
-    $.ajax(
-       {
-           url: 'https://orth.dbcls.jp/sparql',
-           type: 'GET',
-           dataType: 'json',
-           data: {
-               format: 'application/sparql-results+json',
-               query: ortholog.createMaxQuery()
-           }
-       }
-    ).then(
-        function( result ) {
-            ortholog.maxId = parseInt( result.results.bindings[ 0 ].max_id.value );
-        }
-    );
-}
-
-// create group page
-ortholog.createGroupPage2 = function() {
     ortholog.createGenesSelect2();
     $('#gene-selection').change( 
         function() {
