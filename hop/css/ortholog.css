@@ -1,11 +1,11 @@
 @charset "utf-8";
 
 .select2-results__options {
-    max-height: 250px !important;
+    max-height: 500px !important;
 }
 
 .select2-results__option {
-    padding: 0px !important;
+    padding: 5px !important;
     margin: 0 !important;
     line-height: 1em;
 }
