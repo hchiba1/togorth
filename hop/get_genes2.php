@@ -13,6 +13,7 @@
     $sql = "select label, name from genes";
     if(strlen($term) > 0) {
         $sql = $sql . " where name like '%" . $term . "%'";
+        $sql = $sql . " or label like '%" . $term . "%'";
     }
     $sql = $sql . " limit 50";
 

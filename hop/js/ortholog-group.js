@@ -191,14 +191,14 @@ ortholog.draw = function( groupId, area ) {
 
 // create select
 ortholog.createGenesSelect = function( term ) {
-    $( '#gene-selection' ).select2(
+    $('#gene-selection').select2(
         {
             ajax: {
                 type: 'POST',
                 url: 'https://orth.dbcls.jp/sparql',
                 data: function( params ) {
                     var term = params.term;
-                    var query = ortholog.createGenesQuery( term );
+                    var query = ortholog.createGenesQuery(term);
                     var data = {
                         format: 'application/sparql-results+json',
                         query: query
@@ -224,7 +224,7 @@ ortholog.createGenesSelect = function( term ) {
 
 // create select
 ortholog.createGenesSelect2 = function( term ) {
-    $( '#gene-selection' ).select2(
+    $('#gene-selection').select2(
         {
             ajax: {
                 type: 'POST',
