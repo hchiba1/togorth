@@ -5,7 +5,8 @@
 }
 
 .select2-results__option {
-    padding: 5px !important;
-    margin: 0 !important;
-    line-height: 1em;
+    padding: 0px !important;
+    margin: 7px !important;
+    line-height: 1.2em;
+    font-size: 95%;
 }
