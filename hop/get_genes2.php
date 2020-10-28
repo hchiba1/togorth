@@ -15,7 +15,7 @@
         $sql = $sql . " where name like '%" . $term . "%'";
         $sql = $sql . " or label like '%" . $term . "%'";
     }
-    $sql = $sql . " limit 50";
+    $sql = $sql . " order by name limit 50";
 
     $result = $dbh->query($sql);
 
