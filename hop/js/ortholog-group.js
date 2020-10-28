@@ -250,8 +250,7 @@ ortholog.createGenesSelect2 = function( term ) {
                     )
                     return { results: array };
                 }
-            },
-            tags: true
+            }
         }
     );
 }
