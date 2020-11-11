@@ -1,5 +1,5 @@
 <?php
-$dbh = new PDO("sqlite:" . __DIR__ . "../data/human_genes.db");
+$dbh = new PDO("sqlite:" . __DIR__ . "/../data/human_genes.db");
 $sql = 'create table genes(id varchar, label, varchar, name varchar)';
 $result = $dbh->query($sql);
 
@@ -7,11 +7,13 @@ $sparql = 'PREFIX orth: <http://purl.jp/bio/11/orth#> '
         . 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> '
         . 'PREFIX dc: <http://purl.org/dc/terms/> '
         . 'PREFIX hop: <http://purl.org/net/orthordf/hOP/ontology#> '
-        . 'select distinct ?id ?label ?name where { '
-        . '    ?gene a orth:Gene ; '
-        . '    rdfs:label ?label ; '
-        . '    hop:description ?name ; '
-        . '    dc:identifier ?id . '
+        . ''
+        . 'SELECT DISTINCT ?id ?label ?name '
+        . 'WHERE {'
+        . '  ?gene a orth:Gene ; '
+        . '      rdfs:label ?label ; '
+        . '      hop:description ?name ; '
+        . '      dc:identifier ?id . '
         . '}';
 $endpoint = 'http://mbgd.genome.ad.jp:8047/sparql';
 
