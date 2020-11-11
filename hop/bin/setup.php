@@ -1,13 +1,13 @@
 <?php
 
-$dbh = new PDO("sqlite:" . __DIR__ . "/data/human_genes.db");
+$dbh = new PDO("sqlite:" . __DIR__ . "../data/human_genes.db");
 $sql = 'create table genes(id varchar, name varchar)';
 $result = $dbh->query($sql);
 
 $sql = "insert into genes(id, name) values(?, ?)";
 $statement = $dbh->prepare($sql);
 
-$file_name = __DIR__ . '/data/human_genes.tsv';
+$file_name = __DIR__ . '../data/human_genes.tsv';
 $file = file($file_name);
 
 foreach($file as $line) {
