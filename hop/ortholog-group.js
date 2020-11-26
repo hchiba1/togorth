@@ -228,7 +228,7 @@ ortholog.createGenesSelect2 = function( term ) {
         {
             ajax: {
                 type: 'POST',
-                url: 'get_genes2.php',
+                url: '/hop/data/get_genes2.php',
                 data: function(params) {
                     data = {term: params.term};
                     return data;

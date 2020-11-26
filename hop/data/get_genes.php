@@ -1,5 +1,5 @@
 <?php
-$dbh = new PDO("sqlite:" . __DIR__ . "/data/human_genes.db");
+$dbh = new PDO("sqlite:" . __DIR__ . "/human_genes.db");
 
 $term = '';
 if(isset($_REQUEST['term'])) {

@@ -1,5 +1,5 @@
 <?php
-    $file_name = __DIR__ . '/data/human_genes.tsv';
+    $file_name = __DIR__ . '/human_genes.tsv';
     $term = '';
     if(isset($_REQUEST['term'])) {
         $term = strtolower($_REQUEST['term']);
