@@ -1,5 +1,5 @@
 <?php
-$dbh = new PDO("sqlite:" . __DIR__ . "/../data/human_genes.db");
+$dbh = new PDO("sqlite:" . __DIR__ . "/human_genes.db");
 $sql = 'create table genes(id varchar, label, varchar, name varchar)';
 $result = $dbh->query($sql);
 
