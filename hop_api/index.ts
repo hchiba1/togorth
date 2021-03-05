@@ -19,8 +19,9 @@ router.get('/api/genes', (req: express.Request, res: express.Response) => {
   db.serialize(() => {
     let sql = 'SELECT name FROM genes';
     if (term !== undefined && term !== null && term !== '') {
-      sql = sql + " WHERE name like '%" + term + "%'";
+      sql = sql + " WHERE name like '%" + term + "%'"
     }
+    sql = sql + ' ORDER by name LIMIT 100'
     db.all(sql, (error, rows) => {
       res.json(rows);
     });
@@ -30,5 +31,5 @@ router.get('/api/genes', (req: express.Request, res: express.Response) => {
 app.use(router);
 
 app.listen(3000, () => {
-  console.log('HOP API Servier is running on port 3000.');
+  console.log('HOP API Server is running on port 3000.');
 });

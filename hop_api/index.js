@@ -22,6 +22,7 @@ router.get('/api/genes', function (req, res) {
         if (term !== undefined && term !== null && term !== '') {
             sql = sql + " WHERE name like '%" + term + "%'";
         }
+        sql = sql + ' ORDER by name LIMIT 100';
         db.all(sql, function (error, rows) {
             res.json(rows);
         });
@@ -30,5 +31,5 @@ router.get('/api/genes', function (req, res) {
 });
 app.use(router);
 app.listen(3000, function () {
-    console.log('HOP API Servier is running on port 3000.');
+    console.log('HOP API Server is running on port 3000.');
 });

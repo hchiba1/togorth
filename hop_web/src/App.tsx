@@ -72,6 +72,7 @@ export class Search extends Component {
                         }
                     }
                 />
+                
             </Container>
         );
     }
