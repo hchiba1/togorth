@@ -18,7 +18,7 @@ export class Search extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3000/api/genes';
+        const url = 'https://orth.dbcls.jp/api/genes';
         axios.get(url).then(
             (response) => {
                 this.setState({options: response.data});
@@ -46,7 +46,7 @@ export class Search extends Component {
                     }
                     onInputChange={
                         (event: object, value: string, reason: string) => {
-                            const url = 'http://localhost:3000/api/genes?keyword=' + value
+                            const url = 'https://orth.dbcls.jp/api/genes?keyword=' + value
                             axios.get(url).then(
                                 (response) => {
                                     this.setState({options: response.data});
@@ -72,7 +72,6 @@ export class Search extends Component {
                         }
                     }
                 />
-                
             </Container>
         );
     }
