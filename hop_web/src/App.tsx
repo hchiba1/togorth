@@ -8,8 +8,8 @@ import {Container, AppBar, Toolbar, Typography, TextField} from '@material-ui/co
 import {Autocomplete} from '@material-ui/lab';
 import {Bar} from './view/Bar'
 
-// const url = 'https://orth.dbcls.jp/api/genes';
-const url = 'http://localhost:3000/api/genes';
+const url = 'https://orth.dbcls.jp/api/genes';
+// const url = 'http://localhost:3000/api/genes';
 
 
 export class Search extends Component {

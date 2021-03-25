@@ -12,7 +12,6 @@ interface IBarProps {
 
 export class Bar extends Component<IBarProps, {}> {
     group_id: string;
-    svg: any;
     id: number;
     static counter: number = 0;
 
@@ -25,43 +24,43 @@ export class Bar extends Component<IBarProps, {}> {
 
     static getColor(comment: string) {
         let color = 'navy';
-        if(comment == 'Mammals') {
+        if(comment === 'Mammals') {
             color = '#31292b';
         }
-        else if(comment == 'Other vertebrates') {
+        else if(comment === 'Other vertebrates') {
             color = '#515153';
         }
-        else if(comment == 'Lancelets/tunicates') {
+        else if(comment === 'Lancelets/tunicates') {
             color = '#6a6c6e';
         }
-        else if(comment == 'Echinoderms/hemichordata') {
+        else if(comment === 'Echinoderms/hemichordata') {
             color = '#929396';
         } 
-        else if(comment == 'Arthropods') {
+        else if(comment === 'Arthropods') {
             color = '#00b6ae';
         }
-        else if(comment == 'Nematodes') {
+        else if(comment === 'Nematodes') {
             color = '#008dcb';
         }
-        else if(comment == 'Cnidaria') {
+        else if(comment === 'Cnidaria') {
             color = '#84460a';
         }
-        else if(comment == 'Sponge/Placozoa') {
+        else if(comment === 'Sponge/Placozoa') {
             color = '#995c2e';
         }
-        else if(comment == 'Choanoflagellates') {
+        else if(comment === 'Choanoflagellates') {
             color = '#c98c5c';
         }
-        else if(comment == 'Fungi') {
+        else if(comment === 'Fungi') {
             color = '#ffb83d';
         }
-        else if(comment == 'Amoebozoa') {
+        else if(comment === 'Amoebozoa') {
             color = '#e2e100';
         }
-        else if(comment == 'Plantae') {
+        else if(comment === 'Plantae') {
             color = '#82cd44';
         }
-        else if(comment == 'Other protists') {
+        else if(comment === 'Other protists') {
             color = '#f11831';
         }
 
