@@ -18,7 +18,7 @@ router.get('/api/genes', function (req, res) {
     var term = req.query.keyword;
     var db = new sqlite3_1.default.Database('human_genes.db');
     db.serialize(function () {
-        var sql = 'SELECT name FROM genes';
+        var sql = 'SELECT name, id FROM genes';
         if (term !== undefined && term !== null && term !== '') {
             sql = sql + " WHERE name like '%" + term + "%'";
         }

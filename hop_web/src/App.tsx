@@ -1,9 +1,15 @@
-import react, {Component} from 'react';
+import {Component} from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './App.css';
 import {Gene} from './model/Gene'
+
 import {Container, AppBar, Toolbar, Typography, TextField} from '@material-ui/core';
 import {Autocomplete} from '@material-ui/lab';
+import {Bar} from './view/Bar'
+
+// const url = 'https://orth.dbcls.jp/api/genes';
+const url = 'http://localhost:3000/api/genes';
 
 
 export class Search extends Component {
@@ -18,7 +24,6 @@ export class Search extends Component {
     }
 
     componentDidMount() {
-        const url = 'https://orth.dbcls.jp/api/genes';
         axios.get(url).then(
             (response) => {
                 this.setState({options: response.data});
@@ -46,8 +51,7 @@ export class Search extends Component {
                     }
                     onInputChange={
                         (event: object, value: string, reason: string) => {
-                            const url = 'https://orth.dbcls.jp/api/genes?keyword=' + value
-                            axios.get(url).then(
+                            axios.get(url + '?keyword=' + value).then(
                                 (response) => {
                                     this.setState({options: response.data});
                                 }
@@ -56,8 +60,12 @@ export class Search extends Component {
                     }
                     onChange={
                         (event, value) => {
-                            // A gene is selected.
-                            console.log(value)
+                            if(value != null) {
+                                ReactDOM.render(
+                                    <Bar group_id={(value as Gene).id}></Bar>,
+                                    document.getElementById('result')
+                                );
+                            }
                         }
                     }
                     renderInput={
@@ -72,6 +80,7 @@ export class Search extends Component {
                         }
                     }
                 />
+                <div id="result"></div>
             </Container>
         );
     }

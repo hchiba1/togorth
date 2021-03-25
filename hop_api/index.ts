@@ -17,7 +17,7 @@ router.get('/api/genes', (req: express.Request, res: express.Response) => {
   const term = req.query.keyword;
   let db = new sqlite.Database('human_genes.db');
   db.serialize(() => {
-    let sql = 'SELECT name FROM genes';
+    let sql = 'SELECT name, id FROM genes';
     if (term !== undefined && term !== null && term !== '') {
       sql = sql + " WHERE name like '%" + term + "%'"
     }
