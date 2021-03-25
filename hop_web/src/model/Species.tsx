@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const endpoint: string = 'http://mbgd.genome.ad.jp:8047/sparql';
+const endpoint: string = 'https://orth.dbcls.jp/sparql';
 
 export class Species {
     id: number;
