@@ -153,7 +153,7 @@ togorth.createDbTable = function( id ) {
     var no = 1;
     $.ajax(
         {
-            url: 'https://spreadsheets.google.com/feeds/list/1QNBD67P-CUbmz_NNOkikNYsuV2bL9zzauToFDZeLib4/od6/public/values',
+            url: 'json/databases.json',
             type: 'GET',
             dataType: 'json',
             data: {
@@ -165,17 +165,11 @@ togorth.createDbTable = function( id ) {
             var tag = '<tr><th>No.</th><th>Name</th><th>Method</th><th>Hierarchical / Flat</th><th>Target</th><th>#organisms</th><th>Sequence Source</th>'
                     + '<th>First Publication</th><th>Last Update</th></tr>'
             $( '#' + id ).html( tag );
-            result.feed.entry.forEach(
-                function( entry ) {
-                    var obsolete = '';
-                    if( 'gsx$obsolete' in entry ) {
-                        obsolete = entry[ 'gsx$obsolete' ][ '$t' ];
-                    }
-
-                    if( obsolete != '1' ) {
-                        var object = togorth.getDbObject( entry.content.$t );
-                        object.no = no;
-                        var lineTag = togorth.createDbLineTag( object );
+            result.forEach(
+                function( entry ) {              
+                    if( entry['Obsolete']  != '1' ) {
+                        entry.no = no;
+                        var lineTag = togorth.createDbLineTag( entry );
                         $( '#' + id ).append( lineTag );
                         no++;                        
                     }
@@ -185,38 +179,9 @@ togorth.createDbTable = function( id ) {
     );
 }
 
-// get DB object
-togorth.getDbObject = function ( string ) {
-    var object = {};
-    var array = string.split( ',' );
-    var prevKey = null;
-    
-    array.forEach(
-        function( element ) {
-            var index = element.indexOf( ':' );
-            if( index >= 0 ) {
-                var key = element.substr( 0, index ).trim();
-                var value = element.substr( index + 1 ).trim();
-                object[ key ] = value;
-                prevKey = key;
-            }
-            else {
-                if( prevKey != null ) {
-                    object[ prevKey ] = object[ prevKey ] + ', ' + element.trim();
-                }
-            }
-        }
-    );
-
-    return object;
-}
-
 // create DB line tag
 togorth.createDbLineTag = function( object ) {
-    var keys = [ 
-        'no', 'name', 'method', 'hierarchicalflatpair-wiseandothercharacteristics', 'target', 'organisms', 
-        'sequencesource', 'publication', 'lastupdate',
-    ]
+    var keys = ['no', 'Name', 'Method', 'Hierarchical/flat/pair-wise (and other characteristics)', 'Target', '#organisms', 'sequence source', 'Publication', 'Last update'];
     var tag = togorth.createLineTag( object, keys );
     return tag;
 }
@@ -228,8 +193,8 @@ togorth.createLineTag = function( object, keys ) {
         function( key ) {
             if( key in object ) {
                 var value = object[ key ];
-                if( key === 'name' ) {
-                    var url = object.url;
+                if( key === 'Name' ) {
+                    var url = object.URL;
                     value = '<a href="' + url + '" target="_blank">' + value + '</a>';
                 }
                 tag += '<td>' + value + '</td>'
@@ -282,7 +247,7 @@ togorth.createPaperTable = function( id ) {
     var no = 1;
     $.ajax(
         {
-            url: 'https://spreadsheets.google.com/feeds/list/1E1z5rRoRKuS9uyZk1D0mOzYBBT6W8K_uZwPbuuEPP58/od6/public/values',
+            url: 'json/references.json',
             type: 'GET',
             dataType: 'json',
             data: {
@@ -291,16 +256,11 @@ togorth.createPaperTable = function( id ) {
         }
     ).then(
         function( result ) {
-            var tag = '<tr><th>Tag</th><th>Year</th><th>Paper</th></tr>'
+          var tag = '<tr><th>Tag</th><th>Year</th><th>Paper</th></tr>'
             $( '#' + id ).html( tag );
-            result.feed.entry.forEach(
+            result.forEach(
                 function( entry ) {
-                    console.log( entry );
-                    var tag = entry[ 'gsx$tag' ][ '$t' ];
-                    var paper = entry[ 'gsx$paper' ][ '$t' ];
-                    var year = entry[ 'gsx$year' ][ '$t' ];
-                    var url = entry[ 'gsx$url' ][ '$t' ];
-                    var lineTag = togorth.createPaperLineTag( tag, paper, year, url );
+                    var lineTag = togorth.createPaperLineTag( entry['Tag'], entry['Paper'], entry['Year'], entry['URL']);
                     $( '#' + id ).append( lineTag );
                 }
             );
