@@ -1,68 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Orthology Resources</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="css/select2.css" rel="stylesheet"/>
-    <link href="js/codemirror/lib/codemirror.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/css/theme.default.min.css">
-    <link href="css/togorth.css" rel="stylesheet"/>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
-    <script src="js/d3.js"></script>
-    <script src="js/select2.js"></script>
-    <script src="js/codemirror/lib/codemirror.js"></script>
-    <script src="js/codemirror/addon/edit/matchbrackets.js"></script>
-    <script src="js/codemirror/addon/edit/matchtags.js"></script>
-    <script src="js/sparql-support.js"></script>
-    <script src="js/sparql.js"></script>
-    <script src="js/togorth.js"></script>
-    <script src="js/ortholog-group.js"></script>
-    <script>
-      $().ready(
-        function () {
-          var tabs = [
-            {title: 'Databases', page: 'databases'},
-            {title: 'Endpoints', page: 'endpoints'},
-            {title: 'SPARQL', page: 'sparql'},
-            /* { title: 'Search', page: 'search' }, */
-            {title: 'Ontology', page: 'links'},
-            /* { title: 'References', page: 'references' } */
-            {title: 'References', page: 'papers'}
-          ];
-          togorth.createTabs(tabs);
-        }
-      );
-    </script>
-    <link
+  <title>Orthology Resources</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link href="css/select2.css" rel="stylesheet"/>
+  <link href="js/codemirror/lib/codemirror.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/css/theme.default.min.css">
+  <link href="css/togorth.css" rel="stylesheet"/>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+  <script src="js/d3.js"></script>
+  <script src="js/select2.js"></script>
+  <script src="js/codemirror/lib/codemirror.js"></script>
+  <script src="js/codemirror/addon/edit/matchbrackets.js"></script>
+  <script src="js/codemirror/addon/edit/matchtags.js"></script>
+  <script src="js/sparql-support.js"></script>
+  <script src="js/sparql.js"></script>
+  <script src="js/togorth.js"></script>
+  <script src="js/ortholog-group.js"></script>
+  <script>
+    $().ready(
+      function () {
+        var tabs = [
+          {title: 'Databases', page: 'databases'},
+          {title: 'Endpoints', page: 'endpoints'},
+          {title: 'SPARQL', page: 'sparql'},
+          /* { title: 'Search', page: 'search' }, */
+          {title: 'Ontology', page: 'links'},
+          /* { title: 'References', page: 'references' } */
+          {title: 'References', page: 'papers'}
+        ];
+        togorth.createTabs(tabs);
+      }
+    );
+  </script>
+  <link
 </head>
 <body>
 <header>
-    <div class="logo">
-        <!-- <h1 id="title">TogoOrthology: an integrated resource in the quest for orthologs</h1> -->
-        <h1 id="title">Orthology Resources</h1>
-    </div>
-    <nav id="top_menu">
-        <div id="tabs"></div>
-    </nav>
+  <div class="logo">
+    <!-- <h1 id="title">TogoOrthology: an integrated resource in the quest for orthologs</h1> -->
+    <h1 id="title">Orthology Resources</h1>
+  </div>
+  <nav id="top_menu">
+    <div id="tabs"></div>
+  </nav>
 </header>
 
 <article>
-    <div class="container">
-        <div id="tabpane">
-            <div id="contents"></div>
-        </div>
+  <div class="container">
+    <div id="tabpane">
+      <div id="contents"></div>
     </div>
+  </div>
 </article>
 
 <footer>
-    <div class="container">
-        <!-- Copyright (C) 2019 Database Center for Life Science (DBCLS) -->
-        2019 Database Center for Life Science (DBCLS)
-    </div>
+  <div class="container">
+    <!-- Copyright (C) 2019 Database Center for Life Science (DBCLS) -->
+    2019 Database Center for Life Science (DBCLS)
+  </div>
 </footer>
 
 </body>
