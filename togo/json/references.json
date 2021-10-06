@@ -1,8 +1,79 @@
 [
-    {
-        "year": "2018",
-        "authors": "Uchiyama, I., Mihara, M., Nishide, H., Chiba, H., & Kato, M.",
-        "title": "MBGD update 2018: microbial genome database based on hierarchical orthology relations covering closely related and distantly related comparisons.",
-        "journal": "Nucleic acids research, 47(D1), D382-D389."
-    }
+  {
+    "Tag": "COG",
+    "Year": "1997",
+    "Paper": "Tatusov, R. L., Koonin, E. V., & Lipman, D. J. (1997). A genomic perspective on protein families. Science, 278(5338), 631-637.",
+    "URL": "",
+    "Comment": ""
+  },
+  {
+    "Tag": "COG",
+    "Year": "2000",
+    "Paper": "Tatusov, R. L., Galperin, M. Y., Natale, D. A., & Koonin, E. V. (2000). The COG database: a tool for genome-scale analysis of protein functions and evolution. Nucleic acids research, 28(1), 33-36.",
+    "URL": "",
+    "Comment": ""
+  },
+  {
+    "Tag": "COG",
+    "Year": "2003",
+    "Paper": "Tatusov, R. L., Fedorova, N. D., Jackson, J. D., Jacobs, A. R., Kiryutin, B., Koonin, E. V., ... & Rao, B. S. (2003). The COG database: an updated version includes eukaryotes. BMC bioinformatics, 4(1), 41.",
+    "URL": "",
+    "Comment": ""
+  },
+  {
+    "Tag": "KEGG",
+    "Year": "2015",
+    "Paper": "Kanehisa, M., Sato, Y., Kawashima, M., Furumichi, M., & Tanabe, M. (2015). KEGG as a reference resource for gene and protein annotation. Nucleic acids research, 44(D1), D457-D462.",
+    "URL": "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.913.3736&rep=rep1&type=pdf",
+    "Comment": ""
+  },
+  {
+    "Tag": "KEGG",
+    "Year": "2013",
+    "Paper": "Kanehisa, M., Goto, S., Sato, Y., Kawashima, M., Furumichi, M., & Tanabe, M. (2013). Data, information, knowledge and principle: back to metabolism in KEGG. Nucleic acids research, 42(D1), D199-D205.",
+    "URL": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3965122/pdf/gkt1076.pdf",
+    "Comment": "KOALA"
+  },
+  {
+    "Tag": "",
+    "Year": "",
+    "Paper": "Kanehisa, M., Sato, Y., Furumichi, M., Morishima, K., & Tanabe, M. (2018). New approach for understanding genome variations in KEGG. Nucleic acids research, 47(D1), D590-D595.",
+    "URL": "https://watermark.silverchair.com/gky962.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAlkwggJVBgkqhkiG9w0BBwagggJGMIICQgIBADCCAjsGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM-Y4uNM55iczQJyg1AgEQgIICDEVO2gF9zFFegnPRKcOIlRIEQy4oTXOhvUTnxzxrFLBmce1Ry6sB-4rtZtRZQX7nCKMWjQgEoGhg5DrrKLsjkpFwljOwk-z5Ti0O3gtymmUeLcyLBqXMt86TJ5ao8ReyBozqR4_eKpJDF2tYaj7cdtjRn-HEWT66J2dx8JvbLYD78RW6YE_xJhNoOXoVfOOrwa9JHDzzYv-tQ9XVbO6UkqqEPGZI3J95Wr0Z5i9iLIg-uwNDrbCyL7Z9_EM-n17jfz9ktnHZgnGFJDFEiykxvpL-aUmGCxABUNEQlOeR4-DEfreQK54WEElLE-D7rziT2xLHPCEBAOyuB-rswIN1foNxsuvv_cg2yxQZJdqFfq5VQ267gmkryqi0HIDfo7XqAWBchNnkc5PXddZZ1uWyipKWEVnvHEcVLxhQUNOL-mQpvcypJyAtWfuciyL9gBgTbCcRKvPWm54iqJJjz3w4OR4xaOjswyAgXdhBFeN2AzfTfyqJMOICOnXXOcaSIIux-gmC0blJuuayO7DOv9rFNJRxmAeU8y8TgcARYwHXXMjywvjrvbHeyG9mHcce9euyeuZDHDEZAJRyINJUn0d_FL5noz6EaqZeHdq9Z4dWPXzWH2NLDyfQCh9mEZJUhM6S22a37BSFRE-F6cRorNwQxDVVwvgbJW9OCYZNuiB1mPEQamJMDhP9t8DT8bTy",
+    "Comment": ""
+  },
+  {
+    "Tag": "",
+    "Year": "2000",
+    "Paper": "Kanehisa, M., & Goto, S. (2000). KEGG: kyoto encyclopedia of genes and genomes. Nucleic acids research, 28(1), 27-30.",
+    "URL": "https://watermark.silverchair.com/280027.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAlYwggJSBgkqhkiG9w0BBwagggJDMIICPwIBADCCAjgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMn0h4MKG3yCpMw4HPAgEQgIICCeEYQn7buuYV_M8fx9oNKpM2RSFJ080fgBYj7-KIHM5rTJsmulspeXllWK3JIwh6KZX4Tacu7aX2MXLUtjo6QLK5LgxJ5a026L9cEHS3CZEJFybzSlPQmm8CE4IymT_7GNjTbAybdSP8_QQo2kJCbgO1caSUVLNAFLxn-OXPPaKxIpoG3EFVS0QlZ2Dfzm8VUrlBA5zrFivavHCIqIgkxe8-NjCiIG8dQFkT-j7GnXn77DaSKu7_3lAQqh_wFc-n7Muo6IiJpBle67Ng_QHdy2zKV-6A7U2OyaipD4vx22CjnyjLxfVzwQMCHKsfPAyQ1KyAL1ovSvlmAlTaMrg9u2BN_Q3ev7Ns9_vYHeODrNT9LgIgwpgQyAau7yBq9U8kg1podi8v2kNtYYwILT58pnnAgYXQd7u5MeeckdLw9Y1bePOaNUeALMPlRmVE2MpxpXo_HXvEC6jTyQiZgZyzE3kvJZ3H13vlJrBYYaGgS-vQkrxI2DI9esKAOwDo7a2VzJMKK9N7egwnqK7J2zpiEtcZcEb-9iE90VsbL_sVdTDzLEevtxHQs4Z4GzAXczBKlea1dX3B4RVH7uG1qE_JTL1NISrOWrN0oXwTIM_E9TkaoNGb8HVplveJbWVCQE2nvQ4GdlBb5pHEuf7RQ4GitdkN9hTTp30McwQKYCX8hzd26rZXqUWO12u_",
+    "Comment": "KEGG Orthology"
+  },
+  {
+    "Tag": "",
+    "Year": "",
+    "Paper": "Ogata, H., Goto, S., Sato, K., Fujibuchi, W., Bono, H., & Kanehisa, M. (1999). KEGG: Kyoto encyclopedia of genes and genomes. Nucleic acids research, 27(1), 29-34.",
+    "URL": "https://academic.oup.com/nar/article/27/1/29/1238108/",
+    "Comment": ""
+  },
+  {
+    "Tag": "",
+    "Year": "",
+    "Paper": "Goto, S., Bono, H., Ogata, H., Fujibuchi, W., Nishioka, T., Sato, K., & Kanehisa, M. (1997). Organizing and computing metabolic pathway data in terms of binary relations. In Pacific Symposium on Biocomputing. Pacific Symposium on Biocomputing (p. 175).",
+    "URL": "",
+    "Comment": ""
+  },
+  {
+    "Tag": "",
+    "Year": "",
+    "Paper": "Ogata, H., Goto, S., Fujibuchi, W., & Kanehisa, M. (1998). Computation with the KEGG pathway database. BioSystems, 47, 119-128.",
+    "URL": "",
+    "Comment": ""
+  },
+  {
+    "Tag": "",
+    "Year": "",
+    "Paper": "Bono, H., Ogata, H., Goto, S., & Kanehisa, M. (1998). Reconstruction of amino acid biosynthesis pathways from the complete genome sequence. Genome research, 8(3), 203-210.",
+    "URL": "",
+    "Comment": ""
+  }
 ]
