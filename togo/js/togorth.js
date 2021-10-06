@@ -162,19 +162,22 @@ togorth.createDbTable = function( id ) {
         }
     ).then(
         function( result ) {
-            var tag = '<tr><th>No.</th><th>Name</th><th>Method</th><th>Hierarchical / Flat</th><th>Target</th><th>#organisms</th><th>Sequence Source</th>'
-                    + '<th>First Publication</th><th>Last Update</th></tr>'
-            $( '#' + id ).html( tag );
+            var content = '<thead><tr><th>No.</th><th>Name</th><th>Method</th><th>Hierarchical / Flat</th><th>Target</th><th>#organisms</th><th>Sequence Source</th>'
+                    + '<th>First Publication</th><th>Last Update</th></tr></thead>'
             result.forEach(
                 function( entry ) {              
                     if( entry['Obsolete']  != '1' ) {
                         entry.no = no;
                         var lineTag = togorth.createDbLineTag( entry );
-                        $( '#' + id ).append( lineTag );
+                        content += lineTag;
                         no++;                        
                     }
                 }
             );
+            $( '#' + id ).html(content).tablesorter({
+                headers: {
+                }
+            });
         }
     );
 }
