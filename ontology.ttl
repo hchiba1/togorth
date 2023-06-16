@@ -8,7 +8,7 @@
 :HomoloGeneBranch a owl:Class .
 
 :branch a owl:ObjectProperty .
-    rdfs:domain :Taxon ;
+    rdfs:domain taxon:Taxon ;
     rdfs:range :HomoloGeneBranch .
 
 :timeMya a owl:DatatypeProperty .
