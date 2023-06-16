@@ -1,2 +1,3 @@
 stanza/dist/
 /hop/data/*.db
+node_modules/
