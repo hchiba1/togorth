@@ -1,0 +1,30 @@
+@prefix : <http://purl.org/net/orthordf/hOP/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxon: <http://ddbj.nig.ac.jp/ontologies/taxonomy/> .
+
+
+### Properties for NCIBI HomoloGene
+
+:HomoloGeneBranch a owl:Class .
+
+:branch a owl:ObjectProperty .
+    rdfs:domain :Taxon ;
+    rdfs:range :HomoloGeneBranch .
+
+:timeMya a owl:DatatypeProperty .
+    rdfs:domain :HomoloGeneBranch .
+
+
+### Properties for NCIBI gene2go
+
+:hasGO a owl:ObjectProperty .
+
+
+### Properties for blast out
+
+:blastOut a owl:DatatypeProperty .
+
+:query a owl:ObjectProperty .
+
+:target a owl:ObjectProperty .
+
